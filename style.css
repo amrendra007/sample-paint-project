@@ -1,0 +1,34 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+.inventory {
+	border-radius: 2px;
+	margin:20px;
+}
+
+input {
+	font-size: 100%;
+	font-family: Times, Times New Roman;
+	text-align: center;
+	/* padding: 500px 10px; */
+	width: 100px;
+	outline: none;
+}
+
+
+canvas{
+	display: block;
+	background: white;
+	border: 1px solid black;
+	margin: 10px;
+	
+}
+
+#selected {
+	background-color: blue;
+	color: white;
+	border-radius: 4px;
+
+}
