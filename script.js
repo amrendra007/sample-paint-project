@@ -200,30 +200,33 @@ function handleMouseMove(e) {
 
   //handling drag n drop
   shapes.forEach(s => {
+    let dx = mouseEnd.x - startX;
+    let dy = mouseEnd.y - startY;
+
     if (s.dragging && s.shape === "circle") {
       context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      s.x = mouseEnd.x;
-      s.y = mouseEnd.y;
+      s.x = s.x + dx;
+      s.y = s.y + dy;
       drawObject();
+      startX = mouseEnd.x
+      startY = mouseEnd.y
     } else if (s.dragging && s.shape === "square") {
       context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      s.x = mouseEnd.x;
-      s.y = mouseEnd.y;
+      s.x = s.x + dx;
+      s.y = s.y + dy;
       drawObject();
+      startX = mouseEnd.x
+      startY = mouseEnd.y
     }
     else if (s.dragging && s.shape === "line") {
       context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      let dx = mouseEnd.x - startX;
-      // console.log("TCL: handleMouseMove -> dx", dx)
-      let dy = mouseEnd.y - startY;
       s.x1 = s.x1 + dx
       s.x2 = s.x2 + dx
       s.y1 = s.y1 + dy
       s.y2 = s.y2 + dy
-
+      drawObject();
       startX = mouseEnd.x
       startY = mouseEnd.y
-      drawObject();
     }
   });
 }
